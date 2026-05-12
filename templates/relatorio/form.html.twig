@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mini Exportador de Relatórios{% endblock %}
+
+{% block body %}
+<div class="container py-5" style="max-width: 640px;">
+    <h1 class="mb-1">Mini Exportador de Relatórios</h1>
+    <p class="text-muted mb-4">Escolha o relatório e o formato de exportação.</p>
+
+    <form method="post" action="{{ path('relatorio_exportar') }}" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Relatório</label>
+            <select name="tipo" id="tipo" class="form-select" required>
+                {% for chave, label in relatorios %}
+                    <option value="{{ chave }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="formato" class="form-label">Formato de exportação</label>
+            <select name="formato" id="formato" class="form-select" required>
+                {% for formato in formatos %}
+                    <option value="{{ formato }}">{{ formato|upper }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Gerar e baixar</button>
+    </form>
+</div>
+{% endblock %}

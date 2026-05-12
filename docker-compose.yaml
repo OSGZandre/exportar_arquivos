@@ -1,0 +1,23 @@
+# version: "3"
+
+services:
+  php-apache:
+    container_name: "${CONTAINER_NAME_PREFIX}-apache-php"
+    build: .
+    volumes:
+      - ${PATH_TO_SYMFONY_PROJECT}:/var/www/html
+      - /.aws:/.aws
+      - ./php.ini:/usr/local/etc/php/conf.d/custom.ini
+    ports:
+      - "8095:80"
+    restart: unless-stopped
+    # networks:
+    #   - apps_network
+
+volumes:
+  php-apache:
+
+# networks:
+#   apps_network:
+#     name: apps_network
+#     external: true
