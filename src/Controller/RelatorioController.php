@@ -15,9 +15,6 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class RelatorioController extends AbstractController
 {
-    /**
-     * @var array<string, array{label: string, class: class-string<RelatorioAbstrato>}>
-     */
     private const RELATORIOS = [
         'vendas' => [
             'label' => 'Relatório de Vendas',
