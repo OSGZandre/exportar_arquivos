@@ -34,7 +34,7 @@ final class ExportadorRegistry
                 implode(', ', $this->formatosDisponiveis()),
             ));
         }
-        dd($this->map[$chave]);
+        // dd($this->map[$chave]);
         return $this->map[$chave];
     }
 
