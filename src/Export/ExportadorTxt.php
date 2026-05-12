@@ -13,7 +13,7 @@ final class ExportadorTxt implements ExportadorInterface
         $larguras = $this->calcularLarguras($conteudo->cabecalhos, $conteudo->linhas);
         $separador = $this->montarSeparador($larguras);
 
-        $linhas   = [];
+        $linhas = [];
         $linhas[] = $conteudo->titulo;
         $linhas[] = 'Gerado em: ' . $conteudo->geradoEm->format('d/m/Y H:i:s');
         $linhas[] = '';

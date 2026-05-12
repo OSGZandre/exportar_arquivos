@@ -9,11 +9,11 @@ final class RelatorioVendas extends RelatorioAbstrato
     protected function buscarDados(): array
     {
         return [
-            ['produto' => 'Notebook Dell Inspiron', 'quantidade' => 12, 'valor_unitario' => 4599.90],
-            ['produto' => 'Mouse Logitech MX',      'quantidade' => 45, 'valor_unitario' => 389.00],
-            ['produto' => 'Teclado Mecânico K70',   'quantidade' => 18, 'valor_unitario' => 899.50],
-            ['produto' => 'Monitor LG 27"',         'quantidade' => 7,  'valor_unitario' => 1899.00],
-            ['produto' => 'Webcam Logitech C920',   'quantidade' => 23, 'valor_unitario' => 549.90],
+            ['produto' => 'Notebook Dell', 'quantidade' => 12, 'valor_unitario' => 4599.90],
+            ['produto' => 'Mouse Logitech G PRO', 'quantidade' => 45, 'valor_unitario' => 755.00],
+            ['produto' => 'Teclado Mecânico Redragon K552', 'quantidade' => 18, 'valor_unitario' => 199.90],
+            ['produto' => 'Monitor LG 24"', 'quantidade' => 7, 'valor_unitario' => 1899.00],
+            ['produto' => 'Webcam ruim', 'quantidade' => 23, 'valor_unitario' => 19.90],
         ];
     }
 
@@ -21,7 +21,7 @@ final class RelatorioVendas extends RelatorioAbstrato
     {
         $linhas = [];
         foreach ($dados as $item) {
-            $total    = (float) $item['quantidade'] * (float) $item['valor_unitario'];
+            $total = (float) $item['quantidade'] * (float) $item['valor_unitario'];
             $linhas[] = [
                 (string) $item['produto'],
                 (string) $item['quantidade'],
@@ -31,10 +31,10 @@ final class RelatorioVendas extends RelatorioAbstrato
         }
 
         return new ConteudoRelatorio(
-            titulo:     'Relatório de Vendas',
+            titulo: 'Relatório de Vendas',
             cabecalhos: ['Produto', 'Quantidade', 'Valor Unitário (R$)', 'Total (R$)'],
-            linhas:     $linhas,
-            geradoEm:   new \DateTimeImmutable(),
+            linhas: $linhas,
+            geradoEm: new \DateTimeImmutable(),
         );
     }
 

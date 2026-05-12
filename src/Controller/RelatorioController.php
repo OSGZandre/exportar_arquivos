@@ -48,19 +48,15 @@ final class RelatorioController extends AbstractController
     #[Route('/relatorio/exportar', name: 'relatorio_exportar', methods: ['POST'])]
     public function exportar(Request $request): Response
     {
-        $tipo    = (string) $request->request->get('tipo', '');
+        $tipo = (string) $request->request->get('tipo', '');
         $formato = (string) $request->request->get('formato', '');
 
-        if (!isset(self::RELATORIOS[$tipo])) {
-            throw $this->createNotFoundException(sprintf('Tipo de relatório "%s" não suportado.', $tipo));
-        }
-
         $exportador = $this->registry->obter($formato);
-        $classe     = self::RELATORIOS[$tipo]['class'];
+        $classe = self::RELATORIOS[$tipo]['class'];
 
         /** @var RelatorioAbstrato $relatorio */
         $relatorio = new $classe($exportador);
-        $arquivo   = $relatorio->gerar();
+        $arquivo = $relatorio->gerar();
 
         return new Response(
             $arquivo->conteudo,

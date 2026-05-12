@@ -9,12 +9,11 @@ final class RelatorioFuncionarios extends RelatorioAbstrato
     protected function buscarDados(): array
     {
         return [
-            ['nome' => 'Ana Souza',        'cargo' => 'Desenvolvedora Sênior', 'salario' => 12500.00],
-            ['nome' => 'Bruno Lima',       'cargo' => 'Analista de Dados',     'salario' => 8900.00],
-            ['nome' => 'Carla Mendes',     'cargo' => 'Tech Lead',             'salario' => 16800.00],
-            ['nome' => 'Diego Ferreira',   'cargo' => 'Designer UX',           'salario' => 7800.00],
-            ['nome' => 'Eduarda Ribeiro',  'cargo' => 'Gerente de Projetos',   'salario' => 14200.00],
-            ['nome' => 'Felipe Castro',    'cargo' => 'Desenvolvedor Pleno',   'salario' => 9500.00],
+            ['nome' => 'Danilo', 'cargo' => 'Gerente', 'salario' => 15000.00],
+            ['nome' => 'Léo', 'cargo' => 'Analista de Sistemas',     'salario' => 10000.00],
+            ['nome' => 'Bernardo', 'cargo' => 'Dev Senior', 'salario' => 8000.00],
+            ['nome' => 'Adilio', 'cargo' => 'Dev Pleno',   'salario' => 5000.00],
+            ['nome' => 'André', 'cargo' => 'Dev Junior',   'salario' => 2500.00],
         ];
     }
 

@@ -15,9 +15,9 @@ abstract class RelatorioAbstrato
 
     final public function gerar(): ArquivoExportado
     {
-        $dados    = $this->buscarDados();
+        $dados = $this->buscarDados();
         $conteudo = $this->montarConteudo($dados);
-        $binario  = $this->exportador->exportar($conteudo);
+        $binario = $this->exportador->exportar($conteudo);
 
         return new ArquivoExportado(
             conteudo:    $binario,
