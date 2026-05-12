@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+        h1 { margin-bottom: 4px; }
+        p.meta { color: #666; margin-top: 0; }
+        table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+        th { background: #f4f4f4; }
+        tr:nth-child(even) td { background: #fafafa; }
+    </style>
+</head>
+<body>
+    <h1>{{ titulo }}</h1>
+    <p class="meta">Gerado em {{ geradoEm }}</p>
+    <table>
+        <thead>
+            <tr>
+                {% for coluna in cabecalhos %}
+                    <th>{{ coluna }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for linha in linhas %}
+                <tr>
+                    {% for celula in linha %}
+                        <td>{{ celula }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
